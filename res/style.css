@@ -1,0 +1,9 @@
+#inputDisplay {
+	height: 50px;
+	border: 2px solid red;
+}
+
+#inputDisplayStorage {
+	height: 50px;
+	border: 2px solid blue;
+}
