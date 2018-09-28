@@ -69,8 +69,6 @@ function storeInput(){
 function calculate(){
 	console.log('calculating');
 	storeInput()
-	fjdsa
-	fjsfdads
 }
 
 
