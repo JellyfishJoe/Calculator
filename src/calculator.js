@@ -4,8 +4,8 @@ var numbers = [];
 var operators = [];
 var answer;
 
-var paragraphInput = document.getElementById('inputDisplayText');
-var paragraphStorage = document.getElementById('inputDisplayStorageText');
+let paragraphInput = document.getElementById('inputDisplayText');
+let paragraphStorage = document.getElementById('inputDisplayStorageText');
 
 let inputDisplay = document.getElementById('inputDisplay').innerHTML;
 
@@ -68,8 +68,7 @@ function addInput(stuff){
 		storeInput();
 		operators.push(stuff);
 		addStorage(stuff);
-	}
-		else {
+	} else {
 		paragraphInput.textContent += stuff;
 	}
 }
