@@ -1,5 +1,8 @@
 var stuff;
+var inputs = [];
 var numbers = [];
+var operators = [];
+var answer;
 
 var paragraphInput = document.getElementById('inputDisplayText');
 var paragraphStorage = document.getElementById('inputDisplayStorageText');
@@ -26,6 +29,8 @@ let $division = document.getElementById('division');
 
 let $submit = document.getElementById('submit');
 
+let $clear = document.getElementById('clear');
+
 $nine.addEventListener('click', function(){addInput("9")});
 $eight.addEventListener('click', function(){addInput("8")});
 $seven.addEventListener('click', function(){addInput("7")});
@@ -44,12 +49,27 @@ $division.addEventListener('click', function(){addInput(" / ")});
 
 $submit.addEventListener('click', function(){calculate()});
 
+$clear.addEventListener('click', function(){clear()});
 function addInput(stuff){
 	console.log('nine was clicked');
 	if(stuff == " + " || stuff == " - " || stuff == " * " || stuff == " / "){
 		storeInput();
+		operators.push(stuff);
 		addStorage(stuff);
-	} else {
+	} else if(stuff == " - "){
+		storeInput();
+		operators.push(stuff);
+		addStorage(stuff);
+	} else if(stuff == " * "){
+		storeInput();
+		operators.push(stuff);
+		addStorage(stuff);
+	} else if(stuff == " / "){
+		storeInput();
+		operators.push(stuff);
+		addStorage(stuff);
+	}
+		else {
 		paragraphInput.textContent += stuff;
 	}
 }
@@ -58,18 +78,58 @@ function addStorage(stuff){
 	paragraphStorage.textContent += stuff;
 }
 
-function storeInput(){
+function storeInput(n){
 	console.log('input was stored');
 	addStorage(paragraphInput.textContent);
-	numbers.push(paragraphInput.textContent);
-	console.log(numbers);
+	inputs.push(paragraphInput.textContent);
+	console.log(inputs);
 	paragraphInput.textContent = "";
 }
 
 function calculate(){
+	storeInput();
+	addStorage(" = ");
 	console.log('calculating');
-	storeInput()
+	for(i = 0; i < inputs.length; i++){
+		numbers.push(parseInt(inputs[i]));
+		console.log(numbers);
+	}
+	console.log(operators);
+	for(i = 0; i < operators.length; i++){
+		console.log(operators[i]);
+		if(i == 0){
+			if(operators[i] == " + "){
+				console.log("first number is " + numbers[2 * i - 1]);
+				console.log("second number is " + numbers[2 * i]);
+				answer = numbers[i] + numbers[i + 1];
+			} else if(operators[i] == " - "){
+				answer = numbers[i] - numbers[i + 1];
+			} else if(operators[i] == " * "){
+				answer = numbers[i] * numbers[i + 1];
+			} else if(operators[i] == " / "){
+				answer = numbers[i] / numbers[i + 1];
+			}
+		} else{
+			if(operators[i] == " + "){
+				console.log("first number is " + numbers[2 * i - 1]);
+				console.log("second number is " + numbers[2 * i]);
+				answer = numbers[2 * i - 1] + numbers[2 * i];
+			} else if(operators[i] == " - "){
+				answer = numbers[2 * i - 1] - numbers[2 * i];
+			} else if(operators[i] == " * "){
+				answer = numbers[2 * i - 1] * numbers[2 * i];
+			} else if(operators[i] == " / "){
+				answer = numbers[2 * i - 1] / numbers[2 * i];
+			}
+		}
+	}
+	addStorage(answer);
 }
 
-
-//Need to finish calculate function
+function clear(){
+	paragraphInput.textContent = "";
+	paragraphStorage.textContent = "";
+	inputs = [];
+	numbers = [];
+	operators = [];
+}
