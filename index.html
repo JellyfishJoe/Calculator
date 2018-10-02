@@ -6,34 +6,40 @@
 		<link rel="stylesheet" href="res/style.css">
 	</head>
 	<body>
-		<section id="inputDisplayStorage">
-			<p id="inputDisplayStorageText"></p>
-		</section>
-		<section id="inputDisplay">
-			<p id="inputDisplayText"></p>
-		</section>
-		<section>
-			<form id="calculator">
-				<button type="button" id="nineButton">9</button>
-				<button type="button" id="eightButton">8</button>
-				<button type="button" id="sevenButton">7</button>
-				<button type="button" id="sixButton">6</button>
-				<button type="button" id="fiveButton">5</button>
-				<button type="button" id="fourButton">4</button>
-				<button type="button" id="threeButton">3</button>
-				<button type="button" id="twoButton">2</button>
-				<button type="button" id="oneButton">1</button>
-				<button type="button" id="zeroButton">0</button>	
+		<div id="all">
+			<div id="text">
+				<section id="inputDisplayStorage">
+					<p id="inputDisplayStorageText"></p>
+				</section>
+				<section id="inputDisplay">
+					<p id="inputDisplayText"></p>
+				</section>
+			</div>
+			<div id="buttons">
+				<section>
+					<form id="calculator">
+						<button type="button" id="nineButton">9</button>
+						<button type="button" id="eightButton">8</button>
+						<button type="button" id="sevenButton">7</button>
+						<button type="button" id="sixButton">6</button>
+						<button type="button" id="fiveButton">5</button>
+						<button type="button" id="fourButton">4</button>
+						<button type="button" id="threeButton">3</button>
+						<button type="button" id="twoButton">2</button>
+						<button type="button" id="oneButton">1</button>
+						<button type="button" id="zeroButton">0</button>	
 
-				<button type="button" id="addition">+</button>	
-				<button type="button" id="subtraction">-</button>
-				<button type="button" id="multiplication">*</button>
-				<button type="button" id="division">/</button>
+						<button type="button" id="addition">+</button>	
+						<button type="button" id="subtraction">-</button>
+						<button type="button" id="multiplication">*</button>
+						<button type="button" id="division">/</button>
 
-				<button type="button" id="submit">=</button>
-				<button type="button" id="clear">Clear</button>
-			</form>
-		</section>
+						<button type="button" id="submit">=</button>
+						<button type="button" id="clear">Clear</button>
+					</form>
+				</section>
+			</div>
+		</div>
 		<script src="src/calculator.js"></script>
 	</body>
 </html>
@@ -64,7 +70,7 @@ Things to do:
 
 -Add more avaliabe operators (more than basic math)
 
-	-Exponents, roots, negative numbers, logarithms, pi
+	-Exponents, roots, negative numbers, logarithms, pi, e
 
 	-Make a button to open a menu of more operators (kind of like turning iPhone calculator sideways to see more operators)
 
@@ -73,5 +79,9 @@ Things to do:
 -See if there is a way to optimize the addition of event listeners to every button (is there a differnt method?)
 
 -Maybe find a better way to display the numbers when typing / way to display the answers
+
+-Add PEMDAS functionality
+
+-Add function to use most recent answer
 
 -->
