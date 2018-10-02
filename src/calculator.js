@@ -50,6 +50,7 @@ $division.addEventListener('click', function(){addInput(" / ")});
 $submit.addEventListener('click', function(){calculate()});
 
 $clear.addEventListener('click', function(){clear()});
+
 function addInput(stuff){
 	console.log('nine was clicked');
 	if(stuff == " + " || stuff == " - " || stuff == " * " || stuff == " / "){
