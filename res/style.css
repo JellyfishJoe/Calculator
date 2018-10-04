@@ -1,9 +1,56 @@
+#all {
+	width: 500px;
+	margin: auto;
+}
+
+#text {
+	margin: auto;
+	width: 500px;
+	border: 2px solid black;
+	display: table;
+}
+
+#input {
+	display: table-cell;
+	position: relative;
+}
+
 #inputDisplay {
 	height: 50px;
+	width: 400px;
 	border: 2px solid red;
+}
+
+#inputDisplayText {
+	height: 19px;
+	border: 2px solid pink;
 }
 
 #inputDisplayStorage {
 	height: 50px;
+	width: 400px;
 	border: 2px solid blue;
+}
+
+#inputDisplayStorageText {
+	height: 19px;
+	border: 2px solid aqua;
+}
+
+#output {
+	display: table-cell;
+	position: relative;
+	background-color: #eaebed;
+}
+
+#outputDisplay {
+	height: 50px;
+	width: 100px;
+	border: 2px solid maroon;
+}
+
+#outputDisplayStorage {
+	height: 50px;
+	width: 100px;
+	border: 2px solid navy;
 }
